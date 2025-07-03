@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government CBT Thrill!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div class="exam-container">
+        <header>
+            <h1 class="main-title">Government Gala Quiz!</h1>
+            <div class="exam-info">
+                <span id="timer" class="info-bubble time-left">⏳ Time Left: 01:30:00</span>
+                <span class="info-bubble question-count">❓ Question <span id="current-question-number">1</span> / <span id="total-questions">50</span></span>
+            </div>
+        </header>
+
+        <form id="cbtForm">
+            <div class="questions-carousel">
+                <div class="question-block active" data-question-id="1">
+                    <p class="question-text">1. What is Government?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a) The ruling party in a country</label>
+                        <label><input type="radio" name="q1" value="b"> b) The process of controlling public affairs</label>
+                        <label><input type="radio" name="q1" value="c"> c) The study of biology</label>
+                        <label><input type="radio" name="q1" value="d"> d) The law enforcement agency</label>
+                    </div>
+                    <input type="hidden" name="q1_answer" value="b">
+                </div>
+
+                <div class="question-block" data-question-id="2">
+                    <p class="question-text">2. Which of these is not an organ of government?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> a) Legislature</label>
+                        <label><input type="radio" name="q2" value="b"> b) Judiciary</label>
+                        <label><input type="radio" name="q2" value="c"> c) Executive</label>
+                        <label><input type="radio" name="q2" value="d"> d) Military</label>
+                    </div>
+                    <input type="hidden" name="q2_answer" value="d">
+                </div>
+
+                <div class="question-block" data-question-id="3">
+                    <p class="question-text">3. What are the three arms (organs) of government?</p>
+                    <textarea name="q3" class="text-answer" placeholder="Separate with commas, e.g., Executive, Legislature, Judiciary"></textarea>
+                    <input type="hidden" name="q3_answer" value="Executive,Legislature,Judiciary">
+                </div>
+
+                <div class="question-block" data-question-id="4">
+                    <p class="question-text">4. The body that interprets the law is the _______. (Fill in the blank)</p>
+                    <input type="text" name="q4" class="text-answer">
+                    <input type="hidden" name="q4_answer" value="Judiciary">
+                </div>
+
+                <div class="question-block" data-question-id="5">
+                    <p class="question-text">5. The principle that says no one is above the law is called __________. (Fill in the blank)</p>
+                    <input type="text" name="q5" class="text-answer">
+                    <input type="hidden" name="q5_answer" value="Rule of Law">
+                </div>
+
+                <div class="question-block" data-question-id="6">
+                    <p class="question-text">6. Types of constitution include all except:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> a) Written</label>
+                        <label><input type="radio" name="q6" value="b"> b) Unwritten</label>
+                        <label><input type="radio" name="q6" value="c"> c) Flexible</label>
+                        <label><input type="radio" name="q6" value="d"> d) Unstable</label>
+                    </div>
+                    <input type="hidden" name="q6_answer" value="d">
+                </div>
+
+                <div class="question-block" data-question-id="7">
+                    <p class="question-text">7. What is a constitution?</p>
+                    <textarea name="q7" class="text-answer"></textarea>
+                    <input type="hidden" name="q7_answer" value="A constitution is a set of rules and principles that guide how a country is governed.">
+                </div>
+
+                <div class="question-block" data-question-id="8">
+                    <p class="question-text">8. What are the forms of government? (List 4)</p>
+                    <textarea name="q8" class="text-answer" placeholder="Separate with commas, e.g., Democracy, Monarchy, Military government, Oligarchy"></textarea>
+                    <input type="hidden" name="q8_answer" value="Democracy,Monarchy,Military government,Oligarchy">
+                </div>
+
+                <div class="question-block" data-question-id="9">
+                    <p class="question-text">9. Who is a citizen?</p>
+                    <textarea name="q9" class="text-answer"></textarea>
+                    <input type="hidden" name="q9_answer" value="A citizen is a legal member of a country with full rights and responsibilities.">
+                </div>
+
+                <div class="question-block" data-question-id="10">
+                    <p class="question-text">10. A person becomes a citizen by all except:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> a) Birth</label>
+                        <label><input type="radio" name="q10" value="b"> b) Marriage</label>
+                        <label><input type="radio" name="q10" value="c"> c) Naturalization</label>
+                        <label><input type="radio" name="q10" value="d"> d) Magic</label>
+                    </div>
+                    <input type="hidden" name="q10_answer" value="d">
+                </div>
+
+                <div class="question-block" data-question-id="11">
+                    <p class="question-text">11. What is a political party?</p>
+                    <textarea name="q11" class="text-answer"></textarea>
+                    <input type="hidden" name="q11_answer" value="A political party is a group of people who share similar ideas and aim to gain power through elections.">
+                </div>
+
+                <div class="question-block" data-question-id="12">
+                    <p class="question-text">12. What is the difference between a political party and a pressure group?</p>
+                    <textarea name="q12" class="text-answer" placeholder="Political party aims to take power. Pressure group influences government decisions without contesting elections."></textarea>
+                    <input type="hidden" name="q12_answer" value="Political party aims to take power. Pressure group influences government decisions without contesting elections.">
+                </div>
+
+                <div class="question-block" data-question-id="13">
+                    <p class="question-text">13. Give two examples of pressure groups.</p>
+                    <textarea name="q13" class="text-answer" placeholder="Separate with commas, e.g., Nigeria Labour Congress (NLC), Academic Staff Union of Universities (ASUU)"></textarea>
+                    <input type="hidden" name="q13_answer" value="Nigeria Labour Congress (NLC),Academic Staff Union of Universities (ASUU)">
+                </div>
+
+                <div class="question-block" data-question-id="14">
+                    <p class="question-text">14. What is the major function of the executive arm?</p>
+                    <input type="text" name="q14" class="text-answer">
+                    <input type="hidden" name="q14_answer" value="To implement and enforce laws.">
+                </div>
+
+                <div class="question-block" data-question-id="15">
+                    <p class="question-text">15. In a monarchy, the head of state is usually a _______. (Fill in the blank)</p>
+                    <input type="text" name="q15" class="text-answer">
+                    <input type="hidden" name="q15_answer" value="King or Queen">
+                </div>
+
+                <div class="question-block" data-question-id="16">
+                    <p class="question-text">16. In a democracy, power belongs to the _______. (Fill in the blank)</p>
+                    <input type="text" name="q16" class="text-answer">
+                    <input type="hidden" name="q16_answer" value="People">
+                </div>
+
+                <div class="question-block" data-question-id="17">
+                    <p class="question-text">17. The 3 types of pre-colonial administration in Nigeria are:</p>
+                    <textarea name="q17" class="text-answer" placeholder="Separate with commas, e.g., Hausa/Fulani (Emirate System), Yoruba (Monarchical), Igbo (Acephalous – no central ruler)"></textarea>
+                    <input type="hidden" name="q17_answer" value="Hausa/Fulani (Emirate System),Yoruba (Monarchical),Igbo (Acephalous – no central ruler)">
+                </div>
+
+                <div class="question-block" data-question-id="18">
+                    <p class="question-text">18. In the Hausa/Fulani system, who was the political head?</p>
+                    <input type="text" name="q18" class="text-answer">
+                    <input type="hidden" name="q18_answer" value="The Emir">
+                </div>
+
+                <div class="question-block" data-question-id="19">
+                    <p class="question-text">19. One of the duties of the judiciary is to ___________. (Fill in the blank)</p>
+                    <input type="text" name="q19" class="text-answer">
+                    <input type="hidden" name="q19_answer" value="Interpret the law">
+                </div>
+
+                <div class="question-block" data-question-id="20">
+                    <p class="question-text">20. One disadvantage of military government is _______. (Give one)</p>
+                    <textarea name="q20" class="text-answer" placeholder="E.g., No freedom of speech / No elections / Use of force"></textarea>
+                    <input type="hidden" name="q20_answer" value="No freedom of speech">
+                </div>
+
+                <div class="question-block" data-question-id="21">
+                    <p class="question-text">21. What is sovereignty?</p>
+                    <textarea name="q21" class="text-answer"></textarea>
+                    <input type="hidden" name="q21_answer" value="Supreme power or authority of a state to govern itself without outside interference.">
+                </div>
+
+                <div class="question-block" data-question-id="22">
+                    <p class="question-text">22. Who is the father of modern political science that defined sovereignty?</p>
+                    <input type="text" name="q22" class="text-answer">
+                    <input type="hidden" name="q22_answer" value="Jean Bodin">
+                </div>
+
+                <div class="question-block" data-question-id="23">
+                    <p class="question-text">23. Democracy can be best described as:</p>
+                    <div class="options">
+                        <label><input type="radio" name="q23" value="a"> a) Rule by the army</label>
+                        <label><input type="radio" name="q23" value="b"> b) Rule by a king</label>
+                        <label><input type="radio" name="q23" value="c"> c) Government by the people</label>
+                        <label><input type="radio" name="q23" value="d"> d) Government by one person</label>
+                    </div>
+                    <input type="hidden" name="q23_answer" value="c">
+                </div>
+
+                <div class="question-block" data-question-id="24">
+                    <p class="question-text">24. What are the two major types of democracy?</p>
+                    <textarea name="q24" class="text-answer" placeholder="Separate with commas, e.g., Direct democracy, Indirect (Representative) democracy"></textarea>
+                    <input type="hidden" name="q24_answer" value="Direct democracy,Indirect (Representative) democracy">
+                </div>
+
+                <div class="question-block" data-question-id="25">
+                    <p class="question-text">25. The major condition for democracy to work is _______. (Fill in the blank)</p>
+                    <input type="text" name="q25" class="text-answer">
+                    <input type="hidden" name="q25_answer" value="Free and fair elections">
+                </div>
+
+                <div class="question-block" data-question-id="26">
+                    <p class="question-text">26. What is political participation?</p>
+                    <textarea name="q26" class="text-answer"></textarea>
+                    <input type="hidden" name="q26_answer" value="The ways in which citizens take part in politics and decision-making (e.g., voting, protests, joining parties).">
+                </div>
+
+                <div class="question-block" data-question-id="27">
+                    <p class="question-text">27. List 3 ways people participate in politics.</p>
+                    <textarea name="q27" class="text-answer" placeholder="Separate with commas, e.g., Voting, Contesting elections, Joining political parties"></textarea>
+                    <input type="hidden" name="q27_answer" value="Voting,Contesting elections,Joining political parties">
+                </div>
+
+                <div class="question-block" data-question-id="28">
+                    <p class="question-text">28. What is the Civil Service?</p>
+                    <textarea name="q28" class="text-answer"></textarea>
+                    <input type="hidden" name="q28_answer" value="The body of government workers employed to assist the executive in implementing policies and programs.">
+                </div>
+
+                <div class="question-block" data-question-id="29">
+                    <p class="question-text">29. Mention 2 features of the civil service.</p>
+                    <textarea name="q29" class="text-answer" placeholder="Separate with commas, e.g., Permanence, Neutrality"></textarea>
+                    <input type="hidden" name="q29_answer" value="Permanence,Neutrality">
+                </div>
+
+                <div class="question-block" data-question-id="30">
+                    <p class="question-text">30. What is a public corporation?</p>
+                    <textarea name="q30" class="text-answer"></textarea>
+                    <input type="hidden" name="q30_answer" value="A government-owned business created to provide services to the public (e.g., PHCN, NNPC).">
+                </div>
+
+                <div class="question-block" data-question-id="31">
+                    <p class="question-text">31. The head of a local government is called the _______. (Fill in the blank)</p>
+                    <input type="text" name="q31" class="text-answer">
+                    <input type="hidden" name="q31_answer" value="Chairman">
+                </div>
+
+                <div class="question-block" data-question-id="32">
+                    <p class="question-text">32. How many local governments are in Nigeria?</p>
+                    <input type="text" name="q32" class="text-answer">
+                    <input type="hidden" name="q32_answer" value="774">
+                </div>
+
+                <div class="question-block" data-question-id="33">
+                    <p class="question-text">33. What is indirect rule?</p>
+                    <textarea name="q33" class="text-answer"></textarea>
+                    <input type="hidden" name="q33_answer" value="A British colonial system where traditional rulers governed on behalf of the British.">
+                </div>
+
+                <div class="question-block" data-question-id="34">
+                    <p class="question-text">34. Who introduced indirect rule to Nigeria?</p>
+                    <input type="text" name="q34" class="text-answer">
+                    <input type="hidden" name="q34_answer" value="Lord Frederick Lugard">
+                </div>
+
+                <div class="question-block" data-question-id="35">
+                    <p class="question-text">35. Indirect rule was most successful in the _______ region of Nigeria. (Fill in the blank)</p>
+                    <input type="text" name="q35" class="text-answer">
+                    <input type="hidden" name="q35_answer" value="Northern">
+                </div>
+
+                <div class="question-block" data-question-id="36">
+                    <p class="question-text">36. What is nationalism?</p>
+                    <textarea name="q36" class="text-answer"></textarea>
+                    <input type="hidden" name="q36_answer" value="The desire of people to gain political independence and promote their nation’s identity.">
+                </div>
+
+                <div class="question-block" data-question-id="37">
+                    <p class="question-text">37. Name one nationalist in Nigeria’s independence struggle.</p>
+                    <textarea name="q37" class="text-answer" placeholder="E.g., Nnamdi Azikiwe / Herbert Macaulay / Obafemi Awolowo"></textarea>
+                    <input type="hidden" name="q37_answer" value="Nnamdi Azikiwe">
+                </div>
+
+                <div class="question-block" data-question-id="38">
+                    <p class="question-text">38. What is military rule?</p>
+                    <textarea name="q38" class="text-answer"></textarea>
+                    <input type="hidden" name="q38_answer" value="Government controlled by the armed forces after overthrowing a civilian government.">
+                </div>
+
+                <div class="question-block" data-question-id="39">
+                    <p class="question-text">39. When was the first military coup in Nigeria?</p>
+                    <input type="text" name="q39" class="text-answer">
+                    <input type="hidden" name="q39_answer" value="January 15, 1966">
+                </div>
+
+                <div class="question-block" data-question-id="40">
+                    <p class="question-text">40. Who was Nigeria’s first military Head of State?</p>
+                    <input type="text" name="q40" class="text-answer">
+                    <input type="hidden" name="q40_answer" value="General Aguiyi Ironsi">
+                </div>
+
+                <div class="question-block" data-question-id="41">
+                    <p class="question-text">41. Name one disadvantage of military rule.</p>
+                    <textarea name="q41" class="text-answer" placeholder="E.g., Lack of freedom / Suspension of constitution / Dictatorship"></textarea>
+                    <input type="hidden" name="q41_answer" value="Lack of freedom">
+                </div>
+
+                <div class="question-block" data-question-id="42">
+                    <p class="question-text">42. What is inter-communal conflict?</p>
+                    <textarea name="q42" class="text-answer"></textarea>
+                    <input type="hidden" name="q42_answer" value="A violent or non-violent clash between different communities or ethnic groups.">
+                </div>
+
+                <div class="question-block" data-question-id="43">
+                    <p class="question-text">43. List one example of inter-communal conflict in Nigeria.</p>
+                    <textarea name="q43" class="text-answer" placeholder="E.g., Tiv-Jukun crisis / Ife-Modakeke crisis / Jos crisis"></textarea>
+                    <input type="hidden" name="q43_answer" value="Tiv-Jukun crisis">
+                </div>
+
+                <div class="question-block" data-question-id="44">
+                    <p class="question-text">44. One method of resolving communal conflict is ___________. (Fill in the blank)</p>
+                    <textarea name="q44" class="text-answer" placeholder="E.g., Dialogue / Peace talks / Mediation"></textarea>
+                    <input type="hidden" name="q44_answer" value="Dialogue">
+                </div>
+
+                <div class="question-block" data-question-id="45">
+                    <p class="question-text">45. What is foreign policy?</p>
+                    <textarea name="q45" class="text-answer"></textarea>
+                    <input type="hidden" name="q45_answer" value="A country's plan for dealing with other nations.">
+                </div>
+
+                <div class="question-block" data-question-id="46">
+                    <p class="question-text">46. What is Nigeria’s foreign policy based on?</p>
+                    <textarea name="q46" class="text-answer"></textarea>
+                    <input type="hidden" name="q46_answer" value="African unity and peaceful coexistence">
+                </div>
+
+                <div class="question-block" data-question-id="47">
+                    <p class="question-text">47. Mention one objective of Nigeria’s foreign policy.</p>
+                    <textarea name="q47" class="text-answer" placeholder="E.g., Promotion of African unity / Peacekeeping / Economic cooperation"></textarea>
+                    <input type="hidden" name="q47_answer" value="Promotion of African unity">
+                </div>
+
+                <div class="question-block" data-question-id="48">
+                    <p class="question-text">48. What is ECOWAS?</p>
+                    <textarea name="q48" class="text-answer"></textarea>
+                    <input type="hidden" name="q48_answer" value="Economic Community of West African States — a regional body for promoting trade and unity in West Africa.">
+                </div>
+
+                <div class="question-block" data-question-id="49">
+                    <p class="question-text">49. When was ECOWAS formed?</p>
+                    <input type="text" name="q49" class="text-answer">
+                    <input type="hidden" name="q49_answer" value="1975">
+                </div>
+
+                <div class="question-block" data-question-id="50">
+                    <p class="question-text">50. Mention two international organizations Nigeria belongs to.</p>
+                    <textarea name="q50" class="text-answer" placeholder="Separate with commas, e.g., United Nations (UN), African Union (AU)"></textarea>
+                    <input type="hidden" name="q50_answer" value="United Nations (UN),African Union (AU)">
+                </div>
+            </div> <div class="navigation-buttons">
+                <button type="button" id="prevBtn" class="nav-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button type="button" id="nextBtn" class="nav-btn">Next <i class="fas fa-arrow-right"></i></button>
+                <button type="submit" id="submitBtn" class="submit-btn">Finish Exam! 🎉</button>
+                
+            </div>
+        </form>
+
+        <div id="results" class="results-section">
+            <h2>Your Exam Results!</h2>
+            <p id="objectiveScore" class="score-display"></p>
+            <h3>Detailed Review:</h3>
+            <div id="objectiveReview" class="review-content"></div>
+            <button id="restartExamBtn" class="restart-btn">Try Again! 💪</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+     
+</body>
+</html>

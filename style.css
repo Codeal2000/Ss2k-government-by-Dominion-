@@ -1,0 +1,357 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans&display=swap');
+
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); /* Fresh gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll from transitions */
+}
+
+.exam-container {
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box;
+    position: relative; /* For header positioning */
+    overflow: hidden; /* Hide overflowing questions */
+}
+
+/* Header & Info Bubbles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-family: 'Balsamiq Sans', cursive; /* Fun, quirky font */
+    font-size: 2.8em;
+    color: #4CAF50; /* Vibrant green */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: bounceIn 0.8s ease-out; /* Little bounce on load */
+}
+
+.exam-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-bubble {
+    background-color: #f0f8ff; /* Light blue */
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #3f51b5; /* Darker blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-bubble:hover {
+    transform: translateY(-5px);
+}
+
+.time-left {
+    color: #ff5722; /* Orange for time */
+}
+
+/* Questions Carousel for one-at-a-time display */
+.questions-carousel {
+    position: relative;
+    min-height: 300px; /* Ensure space for content */
+}
+
+.question-block {
+    background-color: #e8f5e9; /* Light green background for question */
+    border: 2px solid #a5d6a7; /* Green border */
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(100%); /* Start off-screen to the right */
+}
+
+.question-block.active {
+    opacity: 1;
+    transform: translateX(0); /* Slide into view */
+    position: static; /* Take up space when active */
+}
+
+.question-block.fade-out {
+    opacity: 0;
+    transform: translateX(-100%); /* Slide out to the left */
+    position: absolute;
+}
+
+.question-text {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2e7d32; /* Dark green for question text */
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Options for Radio Buttons */
+.options label {
+    display: flex; /* For aligning radio and text */
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.options label:hover {
+    background-color: #e0f2f7; /* Light blue on hover */
+    border-color: #90caf9;
+    transform: translateY(-3px);
+}
+
+.options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2); /* Slightly larger radio buttons */
+}
+
+/* Text Answers (Input/Textarea) */
+.text-answer {
+    width: calc(100% - 30px); /* Adjust for padding */
+    padding: 15px;
+    margin-top: 15px;
+    border: 2px solid #bbdefb; /* Light blue border */
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    color: #555;
+    background-color: #e3f2fd; /* Very light blue background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-answer:focus {
+    border-color: #42a5f5; /* More intense blue on focus */
+    box-shadow: 0 0 8px rgba(66, 165, 245, 0.4);
+    outline: none;
+}
+
+textarea.text-answer {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.nav-btn, .submit-btn, .restart-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn {
+    background-color: #64b5f6; /* Blue */
+    color: white;
+}
+
+.nav-btn:hover {
+    background-color: #42a5f5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.submit-btn {
+    background-color: #ffc107; /* Amber/Yellow */
+    color: #333;
+}
+
+.submit-btn:hover {
+    background-color: #ffeb3b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Results Section */
+.results-section {
+    background-color: #e0f7fa; /* Light cyan */
+    border: 2px solid #80deea;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.8s ease-out;
+}
+
+.results-section h2 {
+    color: #00796b; /* Teal */
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.score-display {
+    font-size: 2em;
+    font-weight: 700;
+    color: #4CAF50; /* Green */
+    margin-bottom: 30px;
+    animation: popIn 0.6s ease-out;
+}
+
+.review-content {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #b2ebf2;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.objective-review-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.objective-review-item.correct {
+    background-color: #e8f5e9; /* Light green */
+    border-color: #a5d6a7;
+}
+
+.objective-review-item.incorrect {
+    background-color: #ffebee; /* Light red */
+    border-color: #ef9a9a;
+}
+
+.review-question {
+    font-weight: 600;
+    color: #3f51b5; /* Dark blue */
+    margin-bottom: 5px;
+}
+
+.review-answer {
+    font-size: 0.95em;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.user-answer {
+    color: #2196f3; /* Blue */
+    font-weight: 500;
+}
+
+.correct-answer {
+    color: #4CAF50; /* Green */
+    font-weight: 500;
+}
+
+.incorrect-answer {
+    color: #f44336; /* Red */
+    font-weight: 500;
+}
+
+.restart-btn {
+    background-color: #ff7043; /* Deep orange */
+    color: white;
+    margin-top: 30px;
+}
+
+.restart-btn:hover {
+    background-color: #ff5722;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .exam-container {
+        padding: 20px;
+    }
+
+    .main-title {
+        font-size: 2em;
+    }
+
+    .exam-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .question-text {
+        font-size: 1.2em;
+    }
+
+    .nav-btn, .submit-btn, .restart-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
